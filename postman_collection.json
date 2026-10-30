@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "Lab 2 - SQLite CRUD Routes",
+    "description": "Test all five Express + SQLite CRUD endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "bookId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get all books",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/"
+      }
+    },
+    {
+      "name": "Get one book",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/{{bookId}}/"
+      }
+    },
+    {
+      "name": "Add a book",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.response.code === 201) {",
+              "  pm.collectionVariables.set(\"bookId\", pm.response.json().bookId);",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman Test Book\",\n  \"author\": \"Postman Author\",\n  \"price\": 299,\n  \"pages\": 210\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/books/"
+      }
+    },
+    {
+      "name": "Update a book",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Postman Book\",\n  \"author\": \"Postman Author\",\n  \"price\": 325,\n  \"pages\": 220\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/books/{{bookId}}/"
+      }
+    },
+    {
+      "name": "Delete a book",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/books/{{bookId}}/"
+      }
+    }
+  ]
+}
