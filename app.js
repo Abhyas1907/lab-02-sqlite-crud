@@ -6,6 +6,11 @@ const { open } = require('sqlite');
 const app = express();
 app.use(express.json());
 
+// GET / - redirect root to /books/
+app.get('/', (request, response) => {
+  response.redirect('/books/');
+});
+
 // GET /dashboard/ - interactive HTML demo page for screenshots
 app.get('/dashboard/', (request, response) => {
   response.setHeader('Content-Type', 'text/html');
