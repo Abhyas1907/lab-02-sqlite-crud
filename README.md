@@ -7,7 +7,16 @@
 
 ## Live link
 
-Not deployed. Run the project locally using the instructions below. The API test script and Postman collection are included so that all five endpoints can be verified. Add the deployed public URL here after deployment, if required by the faculty.
+**Base URL:** https://lab-02-sqlite-crud-8zp6.onrender.com
+
+| Endpoint | URL |
+|---|---|
+| GET all books | https://lab-02-sqlite-crud-8zp6.onrender.com/books/ |
+| GET one book | https://lab-02-sqlite-crud-8zp6.onrender.com/books/1/ |
+| POST book | https://lab-02-sqlite-crud-8zp6.onrender.com/books/ |
+| PUT book | https://lab-02-sqlite-crud-8zp6.onrender.com/books/1/ |
+| DELETE book | https://lab-02-sqlite-crud-8zp6.onrender.com/books/1/ |
+| Interactive demo | https://lab-02-sqlite-crud-8zp6.onrender.com/dashboard/ |
 
 ## Objective
 
