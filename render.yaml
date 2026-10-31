@@ -1,8 +1,8 @@
-﻿services:
+services:
   - type: web
     name: lab-02-sqlite-crud
     env: node
-    buildCommand: npm install
+    buildCommand: npm install --no-audit
     startCommand: node app.js
     envVars:
       - key: PORT
