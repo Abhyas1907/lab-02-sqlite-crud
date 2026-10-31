@@ -108,25 +108,23 @@ Run the SELECT statement again after POST, PUT and DELETE to confirm that the da
 
 ## Screenshots
 
-Create a `screenshots/` folder and add genuine screenshots from your own Postman run and SQLite CLI verification. Suggested filenames:
-
-- `get-all-books.png`
-- `get-one-book.png`
-- `post-book.png`
-- `put-book.png`
-- `delete-book.png`
-- `sqlite-database.png`
-
-Insert them here after capturing:
-
-```md
+### GET all books — `GET /books/`
 ![GET all books](screenshots/get-all-books.png)
+
+### GET one book — `GET /books/1/`
 ![GET one book](screenshots/get-one-book.png)
+
+### POST new book — `POST /books/`
 ![POST book](screenshots/post-book.png)
+
+### PUT update book — `PUT /books/:id/`
 ![PUT book](screenshots/put-book.png)
+
+### DELETE book — `DELETE /books/:id/`
 ![DELETE book](screenshots/delete-book.png)
+
+### SQLite database state
 ![SQLite database](screenshots/sqlite-database.png)
-```
 
 ## Notes: problems faced and how they were solved
 
